@@ -1,16 +1,22 @@
 # tech_taste
 
-A new Flutter project.
+# Description
+A demo app that demonstrates Flutter's ability to create beautiful UI with complex animations.
+The app fetches recipes from local storage.
 
-## Getting Started
+## 📦 Packages 
+| Description    |   Package |
+| ---------| -------|
+| Architecture | --
+| State Management |  --
+| Theming | --
+| animation | --
 
-This project is a starting point for a Flutter application.
+## Screenshot 📸
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+https://github.com/user-attachments/assets/a4200842-d4fa-4797-8145-75607bf2e7e8
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+
