@@ -2,6 +2,7 @@ import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tech_taste/ui/_core/bag_provider.dart';
+import 'package:tech_taste/ui/_core/widget/icon_button.dart';
 import 'package:tech_taste/ui/checkout/checkout_screen.dart';
 
 AppBar getAppBar({required BuildContext context, String? tile}) {
@@ -15,11 +16,9 @@ AppBar getAppBar({required BuildContext context, String? tile}) {
         showBadge: bagProvider.dishesOnBag.isNotEmpty,
         position: badges.BadgePosition.bottomStart(),
         badgeContent: Text(bagProvider.dishesOnBag.length.toString(), style: const TextStyle(fontSize: 10)),
-        child: IconButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckoutScreen()));
-          },
-          icon: const Icon(Icons.shopping_basket),
+        child: IconButtonUi(
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CheckoutScreen())),
+          iconData: Icons.shopping_basket,
         ),
       ),
     ],

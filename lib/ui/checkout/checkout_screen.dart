@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tech_taste/ui/_core/app_text_style.dart';
 import 'package:tech_taste/ui/_core/bag_provider.dart';
+import 'package:tech_taste/ui/_core/context_extensions.dart';
+import 'package:tech_taste/ui/checkout/widgets/address_card.dart';
+import 'package:tech_taste/ui/checkout/widgets/checkout_card_item.dart';
+import 'package:tech_taste/ui/checkout/widgets/confirm_order_card.dart';
+import 'package:tech_taste/ui/checkout/widgets/payment_card.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
@@ -11,38 +17,28 @@ class CheckoutScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sacola'),
-        actions: [TextButton(onPressed: () => bagProvider.clearBag(), child: const Text('Limpar'))],
+        title: Text(context.tr.checkoutTitle, style: const TextStyle(fontSize: 22)),
+        actions: [
+          TextButton(
+            onPressed: () => bagProvider.clearBag(),
+            child: Text(context.tr.checkoutClearButton, style: AppTextStyles.action),
+          ),
+        ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(12),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            spacing: 8.0,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 12,
             children: [
-              const Text('Pedidos', textAlign: TextAlign.center),
-              Column(
-                children: List.generate(bagProvider.getMapDishAmount().keys.length, (index) {
-                  final dish = bagProvider.getMapDishAmount().keys.toList()[index];
-                  return ListTile(
-                    leading: Image.asset('assets/dishes/default.png'),
-                    title: Text(dish.name),
-                    subtitle: Text('R\$: ${dish.price.toStringAsFixed(2)}'),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(onPressed: () => bagProvider.removeDish(dish: dish), icon: const Icon(Icons.remove)),
-                        Text(bagProvider.getMapDishAmount()[dish].toString(), style: const TextStyle(fontSize: 18)),
-                        IconButton(
-                          onPressed: () => bagProvider.addAllDishes(dishes: [dish]),
-                          icon: const Icon(Icons.add),
-                        ),
-                      ],
-                    ),
-                  );
-                }),
-              ),
+              Text(context.tr.checkoutOrdersTitle, style: AppTextStyles.title),
+              ...bagProvider.getMapDishAmount().entries.map((entry) {
+                return CheckoutCardItem(item: entry, bagProvider: bagProvider);
+              }),
+              const PaymentCard(),
+              const AddressCard(),
+              const ConfirmOrderCard(),
             ],
           ),
         ),

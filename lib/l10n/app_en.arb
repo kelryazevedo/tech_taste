@@ -1,0 +1,191 @@
+{
+  "splashTitle": "An innovative partner for your",
+  "@splashTitle": {
+    "description": "First line of the splash tagline"
+  },
+
+  "splashDescription": "Best culinary experience!",
+  "@splashDescription": {
+    "description": "Second line of the splash tagline"
+  },
+
+  "splashButtonStart": "Let's go!",
+  "@splashButtonStart": {
+    "description": "Splash screen button text"
+  },
+
+  "restaurantRecommendations": "Favorites",
+  "@restaurantRecommendations": {
+    "description": "First line of restaurant"
+  },
+
+  "restaurantCardDishName": "{name}",
+  "@restaurantCardDishName": {
+    "description": "Dish name shown on restaurant card",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+
+  "restaurantCardPrice": "R\\$ {price}",
+  "@restaurantCardPrice": {
+    "description": "Dish price shown on restaurant card",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+
+  "restaurantCardDescription": "{description}",
+  "@restaurantCardDescription": {
+    "description": "Dish description shown on restaurant card",
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+
+  "homeWelcome": "Welcome!",
+  "@homeWelcome": {
+    "description": "Welcome text on home screen"
+  },
+
+  "homeSearchLabel": "What do you want to eat?",
+  "@homeSearchLabel": {
+    "description": "Search input label on home screen"
+  },
+
+  "homeCategoryTitle": "Choose by category",
+  "@homeCategoryTitle": {
+    "description": "Category section title"
+  },
+
+  "homeBestRatedTitle": "Top rated",
+  "@homeBestRatedTitle": {
+    "description": "Title for best rated restaurants section"
+  },
+
+  "categoryItem": "{category}",
+  "@categoryItem": {
+    "description": "Category name shown in category widget",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+
+  "restaurantDistance": "{distance} km away",
+  "@restaurantDistance": {
+    "description": "Shows how far the restaurant is",
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dishPrice": "Price: R\\$ {price}",
+  "@dishPrice": {
+    "description": "Label with dish price",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dishName": "{name}",
+  "@dishName": {
+    "description": "Dish name shown on restaurant card",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dishDescription": "{description}",
+  "@dishDescription": {
+    "description": "Dish name shown on restaurant card",
+    "placeholders": {
+      "description": {
+        "type": "String"
+      }
+    }
+  },
+
+  "dishAmountAddButton": "Add",
+  "@dishAmountAddButton": {
+    "description": "Text on the button to confirm adding a dish to the bag"
+  },
+
+  "dishAmountCount": "{count}",
+  "@dishAmountCount": {
+    "description": "Shows current quantity of a dish selected",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+
+  "checkoutTitle": "Bag",
+  "@checkoutTitle": {
+    "description": "Title of the checkout screen"
+  },
+
+  "checkoutClearButton": "Clear",
+  "@checkoutClearButton": {
+    "description": "Button to clear all items from the bag"
+  },
+
+  "checkoutOrdersTitle": "Orders",
+  "@checkoutOrdersTitle": {
+    "description": "Title for the list of items ordered"
+  },
+
+  "addressCardTitle": "Deliver to address:",
+  "@addressCardTitle": {
+    "description": "Title above the delivery address section"
+  },
+
+  "addressCardStreet": "28 Acácias Street",
+  "@addressCardStreet": {
+    "description": "Street line of delivery address"
+  },
+
+  "addressCardComplement": "House 10",
+  "@addressCardComplement": {
+    "description": "Complement part of delivery address"
+  },
+
+  "confirmOrderTitle": "Order:",
+  "@confirmOrderTitle": {
+    "description": "Label for order value row"
+  },
+
+  "confirmOrderLabelDelivery": "Delivery:",
+  "@confirmOrderLabelDelivery": {
+    "description": "Label for delivery value row"
+  },
+
+  "confirmOrderLabelTotal": "Total:",
+  "@confirmOrderLabelTotal": {
+    "description": "Label for total value row"
+  },
+
+  "confirmOrderButton": "Place Order",
+  "@confirmOrderButton": {
+    "description": "Button label to confirm the order"
+  },
+
+  "paymentTitle": "Payment",
+  "@paymentTitle": {
+    "description": "Payment section title"
+  }
+}

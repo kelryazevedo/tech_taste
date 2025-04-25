@@ -2,32 +2,52 @@ import 'package:flutter/material.dart';
 import 'package:tech_taste/model/dishes.dart';
 
 class BagProvider extends ChangeNotifier {
-  List<Dish> dishesOnBag = [];
+  final List<Dish> _dishes = [];
 
-  void addAllDishes({required List<Dish> dishes}) {
-    dishesOnBag.addAll(dishes);
+  List<Dish> get dishesOnBag => List.unmodifiable(_dishes);
+
+  int get totalItems => _dishes.length;
+
+  void addDish(Dish dish, {int amount = 1}) {
+    _dishes.addAll(List.filled(amount, dish));
     notifyListeners();
   }
 
-  void removeDish({required Dish dish}) {
-    dishesOnBag.remove(dish);
+  void removeDish(Dish dish) {
+    _dishes.remove(dish);
     notifyListeners();
+  }
+
+  void removeDishAmount(Dish dish, {int amount = 1}) {
+    int count = 0;
+    _dishes.removeWhere((d) {
+      if (d == dish && count < amount) {
+        count++;
+        return true;
+      }
+      return false;
+    });
+    if (count > 0) notifyListeners();
   }
 
   void clearBag() {
-    dishesOnBag.clear();
+    _dishes.clear();
     notifyListeners();
   }
 
-  Map<Dish, int> getMapDishAmount() {
-    Map<Dish, int> results = {};
-    for (Dish dish in dishesOnBag) {
-      if (results[dish] == null) {
-        results[dish] = 1;
-      } else {
-        results[dish] = results[dish]! + 1;
-      }
+  Map<Dish, int> get groupedDishes {
+    final Map<Dish, int> result = {};
+    for (var dish in _dishes) {
+      result[dish] = (result[dish] ?? 0) + 1;
     }
-    return results;
+    return result;
+  }
+
+  Map<Dish, int> getMapDishAmount() {
+    final Map<Dish, int> result = {};
+    for (final dish in _dishes) {
+      result[dish] = (result[dish] ?? 0) + 1;
+    }
+    return result;
   }
 }
